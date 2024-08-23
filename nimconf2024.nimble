@@ -11,6 +11,6 @@ bin           = @["nimconf2024"]
 
 # Dependencies
 
-requires "nimiSlides >= 0.2.6"
+requires "nimiSlides ~= 0.2.6, monit ~= 1.3.0"
 requires "nim >= 2.0.8"
 
