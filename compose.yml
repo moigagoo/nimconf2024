@@ -3,6 +3,7 @@ version: '3'
 services:
   slides:
     build: .
+    image: nimconf2024
     volumes:
       - .:/usr/src/app
     command: monit run -l=1
