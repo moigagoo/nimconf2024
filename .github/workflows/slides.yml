@@ -1,0 +1,22 @@
+name: Build Slides and Deploy to Pages
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  Slides:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Slides
+        run: compose run slides
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./src
+

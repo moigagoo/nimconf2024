@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  slides:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: monit run -l=1
+
