@@ -1,14 +1,13 @@
 import nimib, nimiSlides
 
-import slides/[title, keypoints]
+import slides/[title, keypoints, karax]
 
 
 nbInit(theme = revealTheme)
 
-setSlidesTheme(Dracula)
-
 title()
 keyPoints()
+karax()
 
 nbSave()
 
