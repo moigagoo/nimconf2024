@@ -43,11 +43,13 @@
       </section>
       <section data-nimib-slide-number="5" data-auto-animate >
       <h2>Karax</h2>
-      <p>include karax/prelude</p>
-<p>proc render: VNode =
-buildHtml:
-tdiv:
-h1: text &quot;This is header&quot;</p>
+      <pre><code class="language-nim">include karax/prelude
+
+proc render: VNode =
+  buildHtml:
+    tdiv:
+      h1: text &quot;This is header&quot;
+</code></pre>
       </section>
     </div>
   </div>
