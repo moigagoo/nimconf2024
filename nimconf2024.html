@@ -18,16 +18,16 @@
       <h2>Key Points</h2>
 <ol>
 <li>
-<p><strong>Karax</strong> is a great framework: fast, lightweight, and stable but it lacks some sugar, namely routing and components.</p>
+<p><a href="https://github.com/karaxnim/karax"><strong>Karax</strong></a> is a great framework: fast, lightweight, stable. But it lacks some sugar, namely routing and components.</p>
 </li>
 <li>
-<p><strong>Kraut</strong> is the missing routing layer for Karax.</p>
+<p><a href="https://github.com/moigagoo/kraut"><strong>Kraut</strong></a> is the missing routing layer for Karax.</p>
 <ul>
-<li><strong>Sauer</strong> is a helper CLI tool that makes adding routes trivial.</li>
+<li><a href="https://github.com/moigagoo/sauer"><strong>Sauer</strong></a> is a helper CLI tool that makes adding routes trivial.</li>
 </ul>
 </li>
 <li>
-<p><strong>Karkas</strong> is a library of layouting primitives.</p>
+<p><a href="https://karkas.nim.town/"><strong>Karkas</strong></a> is a library of layouting primitives.</p>
 </li>
 </ol>
       </section>
@@ -37,18 +37,139 @@
       <section data-nimib-slide-number="4" data-auto-animate >
       <h2>Karax</h2>
       <ul>
-<li>Virtual DOM.</li>
-<li>VNode</li>
+<li>
+<p>Virtual DOM implementation</p>
+<ul>
+<li>Write functions to run in a tight loop to redraw the page</li>
+</ul>
+</li>
+<li>
+<p>DSL to build web pages</p>
+<ul>
+<li>Use familiar tag names without HTML noise</li>
+</ul>
+</li>
+<li>
+<p>VNode type that incapsulates a renderable chunk</p>
+<ul>
+<li>Essentially a component</li>
+</ul>
+</li>
 </ul>
       </section>
       <section data-nimib-slide-number="5" data-auto-animate >
       <h2>Karax</h2>
       <pre><code class="language-nim">include karax/prelude
 
-proc render: VNode =
+proc render(routerData: RouterData): VNode =
   buildHtml:
     tdiv:
-      h1: text &quot;This is header&quot;
+      h1:
+        text &quot;Header&quot;
+      p:
+        text &quot;You're at &quot; &amp; $routerData.hashPart
+
+setRenderer render
+</code></pre>
+      </section>
+      <section data-nimib-slide-number="6" data-auto-animate >
+      <h2>Kraut</h2>
+      </section>
+      <section data-nimib-slide-number="7" data-auto-animate >
+      <h2>Kraut</h2>
+      <ul>
+<li>
+<p>Parser and matcher for Karax's <code>hashPart</code></p>
+<ul>
+<li>Define routes as string templates matched against the current <code>hashPart</code> value</li>
+</ul>
+</li>
+<li>
+<p>Familiar renderer functions from Karax</p>
+<ul>
+<li>Just return a <code>VNode</code> somehow</li>
+</ul>
+</li>
+<li>
+<p>Query and URL param support</p>
+<ul>
+<li>Access captured context in <code>Context</code> object</li>
+</ul>
+</li>
+</ul>
+      </section>
+      <section data-nimib-slide-number="8" data-auto-animate >
+      <h2>Kraut</h2>
+      <pre><code class="language-nim">include karax/prelude
+import kraut
+
+const
+  routes = {
+    &quot;/&quot;: renderIndes,
+    &quot;/users/&quot;: renderUsers,
+    &quot;/users/{userId}/&quot;: renderUser
+  }
+
+setRenderer routeRenderer(routes)
+</code></pre>
+<pre><code class="language-nim">include karax/prelude
+import kraut
+
+proc renderUser*(context: Context): VNode =
+  buildHtml:
+    tdiv:
+      p:
+        text &quot;User id: &quot; &amp; context.urlParams[&quot;userId&quot;]
+</code></pre>
+      </section>
+      <section data-nimib-slide-number="9" data-auto-animate >
+      <h2>Sauer</h2>
+      </section>
+      <section data-nimib-slide-number="10" data-auto-animate >
+      <h2>Sauer</h2>
+      <ul>
+<li>
+<p>Standardized app structure</p>
+<ul>
+<li>Init porject and add pages with shell commands</li>
+</ul>
+</li>
+<li>
+<p><strong>Page</strong> abstraction that represents anything that has its own route</p>
+<ul>
+<li>Focus on business logic, not implementation routine</li>
+</ul>
+</li>
+<li>
+<p>Global state</p>
+<ul>
+<li>Access the current page from <code>state</code> module</li>
+</ul>
+</li>
+</ul>
+      </section>
+      <section data-nimib-slide-number="11" data-auto-animate >
+      <h2>Sauer</h2>
+      <pre><code class="language-nim">import kraut
+
+
+routes:
+  &quot;/&quot;: index
+  &quot;/users/&quot;: users,
+  &quot;/users/{userId}/&quot;: user
+</code></pre>
+<pre><code class="language-nim">include karax/prelude
+import kraut
+
+import ../[pages, state]
+
+
+proc render*(context: Context): VNode =
+  currentPage = Page.user
+  document.title = &quot;user&quot;
+
+  buildHtml:
+    h1: text &quot;user&quot;
 </code></pre>
       </section>
     </div>
