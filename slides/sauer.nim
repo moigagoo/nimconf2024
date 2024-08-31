@@ -8,26 +8,20 @@ template sauer* =
     showAt(2):
       nbText """
 -   Standardized app structure
-    -   Init porject and add pages with shell commands
+    -   Init project and add pages with shell commands
         
 -   **Page** abstraction that represents anything that has its own route
-    -   Focus on business logic, not implementation routine
+    -   Focus on business logic
 
 -   Global state
     -   Access the current page from `state` module
-
 """
 
     showAt(3):
       nbText """
-```nim
-import kraut
-
-
-routes:
-  "/": index
-  "/users/": users,
-  "/users/{userId}/": user
+```shell
+$ sauer init
+$ sauer pages new user --route='/users/{userId}/'
 ```
 
 ```nim

@@ -131,13 +131,13 @@ proc renderUser*(context: Context): VNode =
 <li>
 <p>Standardized app structure</p>
 <ul>
-<li>Init porject and add pages with shell commands</li>
+<li>Init project and add pages with shell commands</li>
 </ul>
 </li>
 <li>
 <p><strong>Page</strong> abstraction that represents anything that has its own route</p>
 <ul>
-<li>Focus on business logic, not implementation routine</li>
+<li>Focus on business logic</li>
 </ul>
 </li>
 <li>
@@ -150,13 +150,8 @@ proc renderUser*(context: Context): VNode =
       </section>
       <section data-nimib-slide-number="11" data-auto-animate >
       <h2>Sauer</h2>
-      <pre><code class="language-nim">import kraut
-
-
-routes:
-  &quot;/&quot;: index
-  &quot;/users/&quot;: users,
-  &quot;/users/{userId}/&quot;: user
+      <pre><code class="language-shell">$ sauer init
+$ sauer pages new user --route='/users/{userId}/'
 </code></pre>
 <pre><code class="language-nim">include karax/prelude
 import kraut
