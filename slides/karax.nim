@@ -32,5 +32,9 @@ proc render(routerData: RouterData): VNode =
 
 setRenderer render
 ```
+
+```shell
+$ karun app.nim
+```
 """
 
