@@ -1,15 +1,17 @@
 import nimib, nimiSlides
 
-import slides/[title, keypoints, karax, kraut, sauer]
+import nimconf2024/utils
+import nimconf2024/slides/[title, keypoints, karax, kraut, sauer]
 
 
 nbInit(theme = revealTheme)
 
-title()
-keyPoints()
-karax()
-kraut()
-sauer()
+slides:
+  title
+  keyPoints
+  karax
+  kraut
+  sauer
 
 nbSave()
 

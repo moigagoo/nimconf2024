@@ -1,7 +1,7 @@
 import nimib, nimiSlides
 
 
-template kraut* =
+template slide* =
   autoAnimateSlides(3):
     nbText "## Kraut" 
 

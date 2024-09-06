@@ -1,7 +1,7 @@
 import nimib, nimiSlides
 
 
-template karax* =
+template slide* =
   autoAnimateSlides(3):
     nbText "## Karax" 
 

@@ -1,7 +1,7 @@
 import nimib, nimiSlides
 
 
-template sauer* =
+template slide* =
   autoAnimateSlides(3):
     nbText "## Sauer" 
 

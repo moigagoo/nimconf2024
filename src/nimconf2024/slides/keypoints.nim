@@ -1,7 +1,7 @@
 import nimib, nimiSlides
 
 
-template keyPoints* =
+template slide* =
   slide:
     nbText """
 ## Key Points
