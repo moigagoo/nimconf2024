@@ -1,7 +1,7 @@
 import nimib, nimiSlides
 
 
-template title* =
+template slide* =
   slide:
     nbText """
 # Karax, Kraut, Karkas
