@@ -6,6 +6,9 @@ import nimconf2024/slides/[title, keypoints, karax, kraut, sauer, karkas]
 
 nbInit(theme = revealTheme)
 
+nb.addStyle """
+"""
+
 slides:
   title
   keyPoints
