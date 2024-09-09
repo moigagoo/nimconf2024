@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/black.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/highlight/monokai.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    
+
+    </style>
   </head>
   <body>
   <div class="reveal">
@@ -213,21 +217,26 @@ proc navEntry(page: Page, url, caption: string): VNode =
       else:
         text k caption
 </code></pre>
-<pre><code class="language-nim">include karax/prelude
-import karkas
-
+      </section>
+      <section data-nimib-slide-number="15" data-auto-animate >
+      <h2>Karkas</h2>
+      <pre><code class="language-nim">const
+  topPanelStyle = {padding: &quot;10px&quot;, boxShadow: &quot;0 0 10px&quot;}
 
 proc render*(body: VNode): VNode =
   buildHtml:
     tdiv(style = vStack()):
-      tdiv(style = topPanel() &lt;- hStack() &lt;- {padding: &quot;10px&quot;, boxShadow: &quot;0 0 10px&quot;}):
+      tdiv(style = topPanel() &lt;- hStack() &lt;- topPanelStyle):
         navEntry(index, &quot;#/&quot;, &quot;Home&quot;)
         navEntry(user, &quot;#/user&quot;, &quot;User&quot;)
       tdiv:
         for node in body:
           node
 </code></pre>
-<pre><code class="language-nim">include karax/prelude
+      </section>
+      <section data-nimib-slide-number="16" data-auto-animate >
+      <h2>Karkas</h2>
+      <pre><code class="language-nim">include karax/prelude
 import kraut
 
 import ../[pages, state, layout]

@@ -2,7 +2,7 @@ import nimib, nimiSlides
 
 
 template slide* =
-  autoAnimateSlides(3):
+  autoAnimateSlides(5):
     nbText "## Karkas" 
 
     showAt(2):
@@ -36,23 +36,28 @@ proc navEntry(page: Page, url, caption: string): VNode =
       else:
         text k caption
 ```
+"""
 
+    showAt(4):
+      nbText """
 ```nim
-include karax/prelude
-import karkas
-
+const
+  topPanelStyle = {padding: "10px", boxShadow: "0 0 10px"}
 
 proc render*(body: VNode): VNode =
   buildHtml:
     tdiv(style = vStack()):
-      tdiv(style = topPanel() <- hStack() <- {padding: "10px", boxShadow: "0 0 10px"}):
+      tdiv(style = topPanel() <- hStack() <- topPanelStyle):
         navEntry(index, "#/", "Home")
         navEntry(user, "#/user", "User")
       tdiv:
         for node in body:
           node
 ```
+"""
 
+    showAt(5):
+      nbText """
 ```nim
 include karax/prelude
 import kraut
@@ -66,5 +71,6 @@ proc render*(context: Context): VNode =
 
   layout.render buildHtml(tdiv) do:
     h1: text "user"
+```
 """
 
