@@ -169,6 +169,78 @@ proc render*(context: Context): VNode =
     h1: text &quot;user&quot;
 </code></pre>
       </section>
+      <section data-nimib-slide-number="12" data-auto-animate >
+      <h2>Karkas</h2>
+      </section>
+      <section data-nimib-slide-number="13" data-auto-animate >
+      <h2>Karkas</h2>
+      <ul>
+<li>
+<p>Building blocks for layouts</p>
+<ul>
+<li>Construct pages with flexbox-based primitives</li>
+</ul>
+</li>
+<li>
+<p>Additional sugar for VNode styling</p>
+<ul>
+<li>Type less stuff to please the compiler</li>
+</ul>
+</li>
+<li>
+<p>Unified approach to components</p>
+<ul>
+<li>Svelte-like all-in-one components</li>
+<li>Layouts are components, too</li>
+</ul>
+</li>
+</ul>
+      </section>
+      <section data-nimib-slide-number="14" data-auto-animate >
+      <h2>Karkas</h2>
+      <pre><code class="language-nim">include karax/prelude
+import karkas
+
+import ../[pages, state]
+
+
+proc navEntry(page: Page, url, caption: string): VNode =
+  buildHtml:
+    tdiv(style = box() &lt;- {minWidth: &quot;50px&quot;}):
+      if state.currentPage != page:
+        a(href = k url):
+          text k caption
+      else:
+        text k caption
+</code></pre>
+<pre><code class="language-nim">include karax/prelude
+import karkas
+
+
+proc render*(body: VNode): VNode =
+  buildHtml:
+    tdiv(style = vStack()):
+      tdiv(style = topPanel() &lt;- hStack() &lt;- {padding: &quot;10px&quot;, boxShadow: &quot;0 0 10px&quot;}):
+        navEntry(index, &quot;#/&quot;, &quot;Home&quot;)
+        navEntry(user, &quot;#/user&quot;, &quot;User&quot;)
+      tdiv:
+        for node in body:
+          node
+</code></pre>
+<pre><code class="language-nim">include karax/prelude
+import kraut
+
+import ../[pages, state, layout]
+
+
+proc render*(context: Context): VNode =
+  currentPage = Page.user
+  document.title = &quot;user&quot;
+
+  layout.render buildHtml(tdiv) do:
+    h1: text &quot;user&quot;
+</code></pre>
+      </section>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
