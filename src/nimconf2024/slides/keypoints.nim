@@ -11,6 +11,6 @@ template slide* =
 1.  [**Kraut**](https://github.com/moigagoo/kraut) is the missing routing layer for Karax.
     -   [**Sauer**](https://github.com/moigagoo/sauer) is a helper CLI tool that makes adding routes trivial.
 
-1.  [**Karkas**](https://karkas.nim.town/) is a library of layouting primitives.
+1.  [**Karkas**](https://karkas.nim.town/) is the missing component and layouting layer for Karax.
 """
 
