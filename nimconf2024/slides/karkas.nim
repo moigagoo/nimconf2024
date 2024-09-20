@@ -7,15 +7,15 @@ template slide* =
 
     showAt(2):
       nbText """
--   Building blocks for layouts
-    -   Construct pages with flexbox-based primitives
-        
 -   Additional sugar for VNode styling
     -   Type less stuff to please the compiler
 
 -   Unified approach to components
     -   Svelte-like all-in-one components
     -   Layouts are components, too
+
+-   Building blocks for layouts
+    -   Construct pages with flexbox-based primitives
 """
 
     showAt(3):
