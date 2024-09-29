@@ -5,6 +5,9 @@ template slide* =
   autoAnimateSlides(5):
     nbText "## Karkas" 
 
+    showAt(1):
+      nbImage("/img/electric_screwdriver.jpg")
+
     showAt(2):
       nbText """
 -   Additional sugar for VNode styling

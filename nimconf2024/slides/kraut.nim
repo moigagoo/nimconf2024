@@ -5,6 +5,9 @@ template slide* =
   autoAnimateSlides(3):
     nbText "## Kraut" 
 
+    showAt(1):
+      nbImage("/img/screwdriver_with_heads.jpg")
+
     showAt(2):
       nbText """
 -   Parser and matcher for Karax's `hashPart`
