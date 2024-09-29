@@ -5,6 +5,9 @@ template slide* =
   autoAnimateSlides(3):
     nbText "## Sauer" 
 
+    showAt(1):
+      nbImage("/img/screwdriver_box.jpg")
+
     showAt(2):
       nbText """
 -   Standardized app structure

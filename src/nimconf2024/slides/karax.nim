@@ -5,6 +5,9 @@ template slide* =
   autoAnimateSlides(3):
     nbText "## Karax" 
 
+    showAt(1):
+      nbImage("/img/screwdriver.jpg")
+
     showAt(2):
       nbText """
 -   Virtual DOM implementation
