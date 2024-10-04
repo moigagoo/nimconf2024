@@ -15,6 +15,11 @@
 <p>Create compact, fast, and composable frontend and have fun doing it</p>
       </section>
       <section data-nimib-slide-number="2" >
+      <h2>Preamble</h2>
+<p><strong>Pleasure</strong> is a huge part of the programming experience for me. This is why I chose Nim in the first place.</p>
+<p>In my talk, I'll cover things that make SPA development in Nim not just viable but pleasing.</p>
+      </section>
+      <section data-nimib-slide-number="3" >
       <h2>Key Points</h2>
 <ol>
 <li>
@@ -31,14 +36,14 @@
 </li>
 </ol>
       </section>
-      <section data-nimib-slide-number="3" data-auto-animate >
+      <section data-nimib-slide-number="4" data-auto-animate >
       <h2>Karax</h2>
       <figure>
 <img src="/img/screwdriver.jpg" alt="">
 <figcaption></figcaption>
 </figure>
       </section>
-      <section data-nimib-slide-number="4" data-auto-animate >
+      <section data-nimib-slide-number="5" data-auto-animate >
       <h2>Karax</h2>
       <ul>
 <li>
@@ -61,7 +66,7 @@
 </li>
 </ul>
       </section>
-      <section data-nimib-slide-number="5" data-auto-animate >
+      <section data-nimib-slide-number="6" data-auto-animate >
       <h2>Karax</h2>
       <pre><code class="language-nim">include karax/prelude
 
@@ -78,14 +83,14 @@ setRenderer render
 <pre><code class="language-shell">$ karun app.nim
 </code></pre>
       </section>
-      <section data-nimib-slide-number="6" data-auto-animate >
+      <section data-nimib-slide-number="7" data-auto-animate >
       <h2>Kraut</h2>
       <figure>
 <img src="/img/screwdriver_with_heads.jpg" alt="">
 <figcaption></figcaption>
 </figure>
       </section>
-      <section data-nimib-slide-number="7" data-auto-animate >
+      <section data-nimib-slide-number="8" data-auto-animate >
       <h2>Kraut</h2>
       <ul>
 <li>
@@ -108,7 +113,7 @@ setRenderer render
 </li>
 </ul>
       </section>
-      <section data-nimib-slide-number="8" data-auto-animate >
+      <section data-nimib-slide-number="9" data-auto-animate >
       <h2>Kraut</h2>
       <pre><code class="language-nim">include karax/prelude
 import kraut
@@ -132,14 +137,14 @@ proc renderUser*(context: Context): VNode =
         text &quot;User id: &quot; &amp; context.urlParams[&quot;userId&quot;]
 </code></pre>
       </section>
-      <section data-nimib-slide-number="9" data-auto-animate >
+      <section data-nimib-slide-number="10" data-auto-animate >
       <h2>Sauer</h2>
       <figure>
 <img src="/img/screwdriver_box.jpg" alt="">
 <figcaption></figcaption>
 </figure>
       </section>
-      <section data-nimib-slide-number="10" data-auto-animate >
+      <section data-nimib-slide-number="11" data-auto-animate >
       <h2>Sauer</h2>
       <ul>
 <li>
@@ -162,7 +167,7 @@ proc renderUser*(context: Context): VNode =
 </li>
 </ul>
       </section>
-      <section data-nimib-slide-number="11" data-auto-animate >
+      <section data-nimib-slide-number="12" data-auto-animate >
       <h2>Sauer</h2>
       <pre><code class="language-shell">$ sauer init
 $ sauer pages new user --route='/users/{userId}/'
@@ -181,14 +186,14 @@ proc render*(context: Context): VNode =
     h1: text &quot;user&quot;
 </code></pre>
       </section>
-      <section data-nimib-slide-number="12" data-auto-animate >
+      <section data-nimib-slide-number="13" data-auto-animate >
       <h2>Karkas</h2>
       <figure>
 <img src="/img/electric_screwdriver.jpg" alt="">
 <figcaption></figcaption>
 </figure>
       </section>
-      <section data-nimib-slide-number="13" data-auto-animate >
+      <section data-nimib-slide-number="14" data-auto-animate >
       <h2>Karkas</h2>
       <ul>
 <li>
@@ -212,7 +217,7 @@ proc render*(context: Context): VNode =
 </li>
 </ul>
       </section>
-      <section data-nimib-slide-number="14" data-auto-animate >
+      <section data-nimib-slide-number="15" data-auto-animate >
       <h2>Karkas</h2>
       <pre><code class="language-nim">include karax/prelude
 import karkas
@@ -230,7 +235,7 @@ proc navEntry(page: Page, url, caption: string): VNode =
         text k caption
 </code></pre>
       </section>
-      <section data-nimib-slide-number="15" data-auto-animate >
+      <section data-nimib-slide-number="16" data-auto-animate >
       <h2>Karkas</h2>
       <pre><code class="language-nim">const
   topPanelStyle = {padding: &quot;10px&quot;, boxShadow: &quot;0 0 10px&quot;}
@@ -246,7 +251,7 @@ proc render*(body: VNode): VNode =
           node
 </code></pre>
       </section>
-      <section data-nimib-slide-number="16" data-auto-animate >
+      <section data-nimib-slide-number="17" data-auto-animate >
       <h2>Karkas</h2>
       <pre><code class="language-nim">include karax/prelude
 import kraut
