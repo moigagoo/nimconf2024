@@ -13,13 +13,13 @@
       <section data-nimib-slide-number="1" >
       <h1>Karax, Kraut, Karkas</h1>
 <p>Create compact, fast, and composable frontend and have fun doing it</p>
+      <aside class="notes">
+  <p>Hi! My name is Constantine, and I've been using Nim as my primary language for hobby development for over a decade.</p>
+<p>Today, I'd like to talk about applying Nim in frontend development. My goal is to show that Nim isn't just a viable option for frontend development (this is not news) but an option you can actually compare to the mainstream frameworks like React or Vue in terms of usability, reusability, app size, and programmer's experience.</p>
+
+</aside>
       </section>
       <section data-nimib-slide-number="2" >
-      <h2>Preamble</h2>
-<p><strong>Pleasure</strong> is a huge part of the programming experience for me. This is why I chose Nim in the first place.</p>
-<p>In my talk, I'll cover things that make SPA development in Nim not just viable but pleasing.</p>
-      </section>
-      <section data-nimib-slide-number="3" >
       <h2>Key Points</h2>
 <ol>
 <li>
@@ -35,15 +35,30 @@
 <p><a href="https://karkas.nim.town/"><strong>Karkas</strong></a> is the missing component and layouting layer for Karax.</p>
 </li>
 </ol>
+      <aside class="notes">
+  <p>First off, Nim has had a React-like framework for ages, called Karax. It's a lean, robust, and mature framework. It produces tiny bundles and is production-ready. However, to compete against React, it lacks some sugar to make a developer's life easier. To me, the most critical ones were routing and components.</p>
+<p>This is why I wrote Kraut (along with its companion app Sauer) and Karkas—respectively, the missing routing and component layers for Karax.</p>
+
+</aside>
       </section>
-      <section data-nimib-slide-number="4" data-auto-animate >
+      <section data-nimib-slide-number="3" data-auto-animate >
       <h2>Karax</h2>
       <figure>
 <img src="/img/screwdriver.jpg" alt="">
 <figcaption></figcaption>
 </figure>
+      <aside class="notes">
+  <p>Let's first talk a bit about Karax and what foundation it offers us.</p>
+<p>First, it implements a Virtual DOM, which is the base mechanic behind React and similar frameworks. The Karax implementation is really straightforward: you just define procs that are evaled in a tight loop to redraw the UI. Karax cares about doing it optimally.</p>
+<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim in Karax.</p>
+<p>Finally, Karax offers VNode type that represents a renderable chunk. It's basically a component, almost.</p>
+<p>This is already enough to build basic apps.</p>
+<p>Here's a quick example of a Karax app. And here's what the app looks rendered.</p>
+<p>The code is pretty self-explanatory but there's one line I want to draw your attention to. See how we access the hash part. It's just a string. You can imagine how painful it can be to manage multiple routes if you have to parse the string into meaningful chunks all the time. You must handle heading, trailing, and repeating slashes and variable parts manually.</p>
+
+</aside>
       </section>
-      <section data-nimib-slide-number="5" data-auto-animate >
+      <section data-nimib-slide-number="4" data-auto-animate >
       <h2>Karax</h2>
       <ul>
 <li>
@@ -65,8 +80,18 @@
 </ul>
 </li>
 </ul>
+      <aside class="notes">
+  <p>Let's first talk a bit about Karax and what foundation it offers us.</p>
+<p>First, it implements a Virtual DOM, which is the base mechanic behind React and similar frameworks. The Karax implementation is really straightforward: you just define procs that are evaled in a tight loop to redraw the UI. Karax cares about doing it optimally.</p>
+<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim in Karax.</p>
+<p>Finally, Karax offers VNode type that represents a renderable chunk. It's basically a component, almost.</p>
+<p>This is already enough to build basic apps.</p>
+<p>Here's a quick example of a Karax app. And here's what the app looks rendered.</p>
+<p>The code is pretty self-explanatory but there's one line I want to draw your attention to. See how we access the hash part. It's just a string. You can imagine how painful it can be to manage multiple routes if you have to parse the string into meaningful chunks all the time. You must handle heading, trailing, and repeating slashes and variable parts manually.</p>
+
+</aside>
       </section>
-      <section data-nimib-slide-number="6" data-auto-animate >
+      <section data-nimib-slide-number="5" data-auto-animate >
       <h2>Karax</h2>
       <pre><code class="language-nim">include karax/prelude
 
@@ -82,6 +107,33 @@ setRenderer render
 </code></pre>
 <pre><code class="language-shell">$ karun app.nim
 </code></pre>
+      <aside class="notes">
+  <p>Let's first talk a bit about Karax and what foundation it offers us.</p>
+<p>First, it implements a Virtual DOM, which is the base mechanic behind React and similar frameworks. The Karax implementation is really straightforward: you just define procs that are evaled in a tight loop to redraw the UI. Karax cares about doing it optimally.</p>
+<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim in Karax.</p>
+<p>Finally, Karax offers VNode type that represents a renderable chunk. It's basically a component, almost.</p>
+<p>This is already enough to build basic apps.</p>
+<p>Here's a quick example of a Karax app. And here's what the app looks rendered.</p>
+<p>The code is pretty self-explanatory but there's one line I want to draw your attention to. See how we access the hash part. It's just a string. You can imagine how painful it can be to manage multiple routes if you have to parse the string into meaningful chunks all the time. You must handle heading, trailing, and repeating slashes and variable parts manually.</p>
+
+</aside>
+      </section>
+      <section data-nimib-slide-number="6" data-auto-animate >
+      <h2>Karax</h2>
+      <figure>
+<img src="/img/karax_app.png" alt="">
+<figcaption></figcaption>
+</figure>
+      <aside class="notes">
+  <p>Let's first talk a bit about Karax and what foundation it offers us.</p>
+<p>First, it implements a Virtual DOM, which is the base mechanic behind React and similar frameworks. The Karax implementation is really straightforward: you just define procs that are evaled in a tight loop to redraw the UI. Karax cares about doing it optimally.</p>
+<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim in Karax.</p>
+<p>Finally, Karax offers VNode type that represents a renderable chunk. It's basically a component, almost.</p>
+<p>This is already enough to build basic apps.</p>
+<p>Here's a quick example of a Karax app. And here's what the app looks rendered.</p>
+<p>The code is pretty self-explanatory but there's one line I want to draw your attention to. See how we access the hash part. It's just a string. You can imagine how painful it can be to manage multiple routes if you have to parse the string into meaningful chunks all the time. You must handle heading, trailing, and repeating slashes and variable parts manually.</p>
+
+</aside>
       </section>
       <section data-nimib-slide-number="7" data-auto-animate >
       <h2>Kraut</h2>
@@ -89,6 +141,20 @@ setRenderer render
 <img src="/img/screwdriver_with_heads.jpg" alt="">
 <figcaption></figcaption>
 </figure>
+      <aside class="notes">
+  <p>Most apps will have more than one location to render. Also, you will often need the same location show different data depending on the URL param. Vanilla Karax doesn't offer route management, and so this is how Kraut was created.</p>
+<p>Kraut implements URL parsing and matching. You can define routes as strings to be matched agaist the current URL.</p>
+<p>For every route, you define a proc to be executed when this route matches, very simple.</p>
+<p>Kraut builds upon Karax's built-in VNode type, meaning that your route rendering procs should just return a VNode.</p>
+<p>You can use variable parts in your routes and pass GET-params, Kraut will capture the values and pass them to the renderer.</p>
+<p>Here's our previous app but with routes. It renders essentially the same as the previous version but our code is much better now:</p>
+<ol>
+<li>Our routes are defined as a simple sequence of pairs. You can put your route definition into a separate module and even split it across several modules.</li>
+<li>Render proc can now live in a separate module as it receives all its context from Kraut.</li>
+<li>We no longer work with raw strings but instead have a nice table of params and their values.</li>
+</ol>
+
+</aside>
       </section>
       <section data-nimib-slide-number="8" data-auto-animate >
       <h2>Kraut</h2>
@@ -112,39 +178,86 @@ setRenderer render
 </ul>
 </li>
 </ul>
+      <aside class="notes">
+  <p>Most apps will have more than one location to render. Also, you will often need the same location show different data depending on the URL param. Vanilla Karax doesn't offer route management, and so this is how Kraut was created.</p>
+<p>Kraut implements URL parsing and matching. You can define routes as strings to be matched agaist the current URL.</p>
+<p>For every route, you define a proc to be executed when this route matches, very simple.</p>
+<p>Kraut builds upon Karax's built-in VNode type, meaning that your route rendering procs should just return a VNode.</p>
+<p>You can use variable parts in your routes and pass GET-params, Kraut will capture the values and pass them to the renderer.</p>
+<p>Here's our previous app but with routes. It renders essentially the same as the previous version but our code is much better now:</p>
+<ol>
+<li>Our routes are defined as a simple sequence of pairs. You can put your route definition into a separate module and even split it across several modules.</li>
+<li>Render proc can now live in a separate module as it receives all its context from Kraut.</li>
+<li>We no longer work with raw strings but instead have a nice table of params and their values.</li>
+</ol>
+
+</aside>
       </section>
       <section data-nimib-slide-number="9" data-auto-animate >
       <h2>Kraut</h2>
-      <pre><code class="language-nim">include karax/prelude
+      <pre><code class="language-nim">proc renderUser*(context: Context): VNode =
+  buildHtml:
+    tdiv:
+      p:
+        text &quot;User id: &quot; &amp; context.urlParams[&quot;userId&quot;]
+</code></pre>
+<pre><code class="language-nim">include karax/prelude
 import kraut
+
 
 const
   routes = {
-    &quot;/&quot;: renderIndes,
+    &quot;/&quot;: renderIndex,
     &quot;/users/&quot;: renderUsers,
     &quot;/users/{userId}/&quot;: renderUser
   }
 
 setRenderer routeRenderer(routes)
 </code></pre>
-<pre><code class="language-nim">include karax/prelude
-import kraut
+      <aside class="notes">
+  <p>Most apps will have more than one location to render. Also, you will often need the same location show different data depending on the URL param. Vanilla Karax doesn't offer route management, and so this is how Kraut was created.</p>
+<p>Kraut implements URL parsing and matching. You can define routes as strings to be matched agaist the current URL.</p>
+<p>For every route, you define a proc to be executed when this route matches, very simple.</p>
+<p>Kraut builds upon Karax's built-in VNode type, meaning that your route rendering procs should just return a VNode.</p>
+<p>You can use variable parts in your routes and pass GET-params, Kraut will capture the values and pass them to the renderer.</p>
+<p>Here's our previous app but with routes. It renders essentially the same as the previous version but our code is much better now:</p>
+<ol>
+<li>Our routes are defined as a simple sequence of pairs. You can put your route definition into a separate module and even split it across several modules.</li>
+<li>Render proc can now live in a separate module as it receives all its context from Kraut.</li>
+<li>We no longer work with raw strings but instead have a nice table of params and their values.</li>
+</ol>
 
-proc renderUser*(context: Context): VNode =
-  buildHtml:
-    tdiv:
-      p:
-        text &quot;User id: &quot; &amp; context.urlParams[&quot;userId&quot;]
-</code></pre>
+</aside>
       </section>
       <section data-nimib-slide-number="10" data-auto-animate >
+      <h2>Kraut</h2>
+      <figure>
+<img src="/img/kraut_app.png" alt="">
+<figcaption></figcaption>
+</figure>
+      <aside class="notes">
+  <p>Most apps will have more than one location to render. Also, you will often need the same location show different data depending on the URL param. Vanilla Karax doesn't offer route management, and so this is how Kraut was created.</p>
+<p>Kraut implements URL parsing and matching. You can define routes as strings to be matched agaist the current URL.</p>
+<p>For every route, you define a proc to be executed when this route matches, very simple.</p>
+<p>Kraut builds upon Karax's built-in VNode type, meaning that your route rendering procs should just return a VNode.</p>
+<p>You can use variable parts in your routes and pass GET-params, Kraut will capture the values and pass them to the renderer.</p>
+<p>Here's our previous app but with routes. It renders essentially the same as the previous version but our code is much better now:</p>
+<ol>
+<li>Our routes are defined as a simple sequence of pairs. You can put your route definition into a separate module and even split it across several modules.</li>
+<li>Render proc can now live in a separate module as it receives all its context from Kraut.</li>
+<li>We no longer work with raw strings but instead have a nice table of params and their values.</li>
+</ol>
+
+</aside>
+      </section>
+      <section data-nimib-slide-number="11" data-auto-animate >
       <h2>Sauer</h2>
       <figure>
 <img src="/img/screwdriver_box.jpg" alt="">
 <figcaption></figcaption>
 </figure>
       </section>
-      <section data-nimib-slide-number="11" data-auto-animate >
+      <section data-nimib-slide-number="12" data-auto-animate >
       <h2>Sauer</h2>
       <ul>
 <li>
@@ -167,7 +280,7 @@ proc renderUser*(context: Context): VNode =
 </li>
 </ul>
       </section>
-      <section data-nimib-slide-number="12" data-auto-animate >
+      <section data-nimib-slide-number="13" data-auto-animate >
       <h2>Sauer</h2>
       <pre><code class="language-shell">$ sauer init
 $ sauer pages new user --route='/users/{userId}/'
@@ -186,14 +299,14 @@ proc render*(context: Context): VNode =
     h1: text &quot;user&quot;
 </code></pre>
       </section>
-      <section data-nimib-slide-number="13" data-auto-animate >
+      <section data-nimib-slide-number="14" data-auto-animate >
       <h2>Karkas</h2>
       <figure>
 <img src="/img/electric_screwdriver.jpg" alt="">
 <figcaption></figcaption>
 </figure>
       </section>
-      <section data-nimib-slide-number="14" data-auto-animate >
+      <section data-nimib-slide-number="15" data-auto-animate >
       <h2>Karkas</h2>
       <ul>
 <li>
@@ -217,7 +330,7 @@ proc render*(context: Context): VNode =
 </li>
 </ul>
       </section>
-      <section data-nimib-slide-number="15" data-auto-animate >
+      <section data-nimib-slide-number="16" data-auto-animate >
       <h2>Karkas</h2>
       <pre><code class="language-nim">include karax/prelude
 import karkas
@@ -235,7 +348,7 @@ proc navEntry(page: Page, url, caption: string): VNode =
         text k caption
 </code></pre>
       </section>
-      <section data-nimib-slide-number="16" data-auto-animate >
+      <section data-nimib-slide-number="17" data-auto-animate >
       <h2>Karkas</h2>
       <pre><code class="language-nim">const
   topPanelStyle = {padding: &quot;10px&quot;, boxShadow: &quot;0 0 10px&quot;}
@@ -251,7 +364,7 @@ proc render*(body: VNode): VNode =
           node
 </code></pre>
       </section>
-      <section data-nimib-slide-number="17" data-auto-animate >
+      <section data-nimib-slide-number="18" data-auto-animate >
       <h2>Karkas</h2>
       <pre><code class="language-nim">include karax/prelude
 import kraut
