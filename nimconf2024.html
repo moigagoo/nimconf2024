@@ -256,6 +256,15 @@ setRenderer routeRenderer(routes)
 <img src="/img/screwdriver_box.jpg" alt="">
 <figcaption></figcaption>
 </figure>
+      <aside class="notes">
+  <p>By allowing us to separate route definition and processing, Kraut paves the way for having a standardized routing convention. This convention is implenented by Kraut's companion app Sauer.</p>
+<p>Sauer is a command-line app for Karax project setup with a certain code structure. It also allows you to add new routes quickly.</p>
+<p>Sauer introduces a new abstraction called Page. Page represents a location that has a route. It maps naturally to your app business logic. For example, you can have a page for the user profile, a page for the shopping cart, and a search page.</p>
+<p>Another addition that Sauer makes is that it creates a state module in your app. It's a module that holds the global state of your app, allowing you to pass the data around across modules. Really simple solution but works really well.</p>
+<p>Here're some quick examples of Sauer commands and the code they produce.</p>
+<p>Notice that we use the global state to store the current page. This is just one example if the data we can store there.</p>
+
+</aside>
       </section>
       <section data-nimib-slide-number="12" data-auto-animate >
       <h2>Sauer</h2>
@@ -279,6 +288,15 @@ setRenderer routeRenderer(routes)
 </ul>
 </li>
 </ul>
+      <aside class="notes">
+  <p>By allowing us to separate route definition and processing, Kraut paves the way for having a standardized routing convention. This convention is implenented by Kraut's companion app Sauer.</p>
+<p>Sauer is a command-line app for Karax project setup with a certain code structure. It also allows you to add new routes quickly.</p>
+<p>Sauer introduces a new abstraction called Page. Page represents a location that has a route. It maps naturally to your app business logic. For example, you can have a page for the user profile, a page for the shopping cart, and a search page.</p>
+<p>Another addition that Sauer makes is that it creates a state module in your app. It's a module that holds the global state of your app, allowing you to pass the data around across modules. Really simple solution but works really well.</p>
+<p>Here're some quick examples of Sauer commands and the code they produce.</p>
+<p>Notice that we use the global state to store the current page. This is just one example if the data we can store there.</p>
+
+</aside>
       </section>
       <section data-nimib-slide-number="13" data-auto-animate >
       <h2>Sauer</h2>
@@ -298,6 +316,15 @@ proc render*(context: Context): VNode =
   buildHtml:
     h1: text &quot;user&quot;
 </code></pre>
+      <aside class="notes">
+  <p>By allowing us to separate route definition and processing, Kraut paves the way for having a standardized routing convention. This convention is implenented by Kraut's companion app Sauer.</p>
+<p>Sauer is a command-line app for Karax project setup with a certain code structure. It also allows you to add new routes quickly.</p>
+<p>Sauer introduces a new abstraction called Page. Page represents a location that has a route. It maps naturally to your app business logic. For example, you can have a page for the user profile, a page for the shopping cart, and a search page.</p>
+<p>Another addition that Sauer makes is that it creates a state module in your app. It's a module that holds the global state of your app, allowing you to pass the data around across modules. Really simple solution but works really well.</p>
+<p>Here're some quick examples of Sauer commands and the code they produce.</p>
+<p>Notice that we use the global state to store the current page. This is just one example if the data we can store there.</p>
+
+</aside>
       </section>
       <section data-nimib-slide-number="14" data-auto-animate >
       <h2>Karkas</h2>
