@@ -77,3 +77,31 @@ proc render*(context: Context): VNode =
 ```
 """
 
+    speakerNote """
+Thanks to Sauer and Kraut's higher level abstractions and enforced code structure, we can actually have a component system.
+
+This is where Karkas enters the stage. It's package that helps create components. 
+
+First, Karkas gives you syntax sugar to apply styles to VNodes. While Karax offeres VNode styling by default, its usage requires a lot of redundant typing and type conversion to please the compiler.
+
+With this sugar, you can create self-contained Svelte-like components.
+
+Finally, there's sugar for layouting, based on flexbox.
+
+Here's a sample app generated with Sauer, and layouted with Karkas. You can find the complete code on GitHub.
+
+First, check out how we create an isolated navigation entry component. Notice that it knows how to render itself based on whether it represents the currently opened page or not.
+
+Also, you can spot Karkas's arrow proc that converts sequences to VStyles and merges multiple styles together. 
+
+Another interesting proc is k. It simply converts a string into a kstring, saving you typing.
+
+Next, let's look at the layout. This one has its styles stored in a separate value and then applied after Karkas's built-in layouting presets for top panel and horizontal stack.
+
+Notice how we make a component render other components: we simply pass a VNode and iterate over its children.
+
+Finally, here's the page code. We now render its content inside the layout component, which ensures every page gets a nice navigation bar.
+
+Here's how the end result looks like.
+"""
+
