@@ -100,8 +100,8 @@ Next, let's look at the layout. This one has its styles stored in a separate val
 
 Notice how we make a component render other components: we simply pass a VNode and iterate over its children.
 
-Finally, here's the page code. We now render its content inside the layout component, which ensures every page gets a nice navigation bar.
+Finally, here's the page code. We now render its content inside the layout component, which ensures every page gets a nice navigation bar. This is done with a simple do notation trick.
 
-Here's how the end result looks like.
+Here's how the end result looks like. This screenshot is static but if you build the demo app yourself, you'll see the navigation works as intended.
 """
 
