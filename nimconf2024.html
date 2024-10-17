@@ -50,7 +50,7 @@
       <aside class="notes">
   <p>Let's first talk a bit about Karax and what foundation it offers us.</p>
 <p>First, it implements a Virtual DOM, which is the base mechanic behind React and similar frameworks. The Karax implementation is really straightforward: you just define procs that are evaled in a tight loop to redraw the UI. Karax cares about doing it optimally.</p>
-<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim in Karax.</p>
+<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim.</p>
 <p>Finally, Karax offers VNode type that represents a renderable chunk. It's basically a component, almost.</p>
 <p>This is already enough to build basic apps.</p>
 <p>Here's a quick example of a Karax app. And here's what the app looks rendered.</p>
@@ -83,7 +83,7 @@
       <aside class="notes">
   <p>Let's first talk a bit about Karax and what foundation it offers us.</p>
 <p>First, it implements a Virtual DOM, which is the base mechanic behind React and similar frameworks. The Karax implementation is really straightforward: you just define procs that are evaled in a tight loop to redraw the UI. Karax cares about doing it optimally.</p>
-<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim in Karax.</p>
+<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim.</p>
 <p>Finally, Karax offers VNode type that represents a renderable chunk. It's basically a component, almost.</p>
 <p>This is already enough to build basic apps.</p>
 <p>Here's a quick example of a Karax app. And here's what the app looks rendered.</p>
@@ -110,7 +110,7 @@ setRenderer render
       <aside class="notes">
   <p>Let's first talk a bit about Karax and what foundation it offers us.</p>
 <p>First, it implements a Virtual DOM, which is the base mechanic behind React and similar frameworks. The Karax implementation is really straightforward: you just define procs that are evaled in a tight loop to redraw the UI. Karax cares about doing it optimally.</p>
-<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim in Karax.</p>
+<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim.</p>
 <p>Finally, Karax offers VNode type that represents a renderable chunk. It's basically a component, almost.</p>
 <p>This is already enough to build basic apps.</p>
 <p>Here's a quick example of a Karax app. And here's what the app looks rendered.</p>
@@ -127,7 +127,7 @@ setRenderer render
       <aside class="notes">
   <p>Let's first talk a bit about Karax and what foundation it offers us.</p>
 <p>First, it implements a Virtual DOM, which is the base mechanic behind React and similar frameworks. The Karax implementation is really straightforward: you just define procs that are evaled in a tight loop to redraw the UI. Karax cares about doing it optimally.</p>
-<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim in Karax.</p>
+<p>Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim.</p>
 <p>Finally, Karax offers VNode type that represents a renderable chunk. It's basically a component, almost.</p>
 <p>This is already enough to build basic apps.</p>
 <p>Here's a quick example of a Karax app. And here's what the app looks rendered.</p>
@@ -345,7 +345,7 @@ proc render*(context: Context): VNode =
 <p>Next, let's look at the layout. This one has its styles stored in a separate value and then applied after Karkas's built-in layouting presets for top panel and horizontal stack.</p>
 <p>Notice how we make a component render other components: we simply pass a VNode and iterate over its children.</p>
 <p>Finally, here's the page code. We now render its content inside the layout component, which ensures every page gets a nice navigation bar. This is done with a simple do notation trick.</p>
-<p>Here's how the end result looks like. This screenshot is static but if you build the demo app yourself, you'll see the navigation works as intended.</p>
+<p>Here's how the end result looks like. You can see our app using standard layout across pages and correctly reacting to navigation.</p>
 
 </aside>
       </section>
@@ -385,7 +385,7 @@ proc render*(context: Context): VNode =
 <p>Next, let's look at the layout. This one has its styles stored in a separate value and then applied after Karkas's built-in layouting presets for top panel and horizontal stack.</p>
 <p>Notice how we make a component render other components: we simply pass a VNode and iterate over its children.</p>
 <p>Finally, here's the page code. We now render its content inside the layout component, which ensures every page gets a nice navigation bar. This is done with a simple do notation trick.</p>
-<p>Here's how the end result looks like. This screenshot is static but if you build the demo app yourself, you'll see the navigation works as intended.</p>
+<p>Here's how the end result looks like. You can see our app using standard layout across pages and correctly reacting to navigation.</p>
 
 </aside>
       </section>
@@ -419,7 +419,7 @@ proc navEntry(page: Page, url, caption: string): VNode =
 <p>Next, let's look at the layout. This one has its styles stored in a separate value and then applied after Karkas's built-in layouting presets for top panel and horizontal stack.</p>
 <p>Notice how we make a component render other components: we simply pass a VNode and iterate over its children.</p>
 <p>Finally, here's the page code. We now render its content inside the layout component, which ensures every page gets a nice navigation bar. This is done with a simple do notation trick.</p>
-<p>Here's how the end result looks like. This screenshot is static but if you build the demo app yourself, you'll see the navigation works as intended.</p>
+<p>Here's how the end result looks like. You can see our app using standard layout across pages and correctly reacting to navigation.</p>
 
 </aside>
       </section>
@@ -451,7 +451,7 @@ proc render*(body: VNode): VNode =
 <p>Next, let's look at the layout. This one has its styles stored in a separate value and then applied after Karkas's built-in layouting presets for top panel and horizontal stack.</p>
 <p>Notice how we make a component render other components: we simply pass a VNode and iterate over its children.</p>
 <p>Finally, here's the page code. We now render its content inside the layout component, which ensures every page gets a nice navigation bar. This is done with a simple do notation trick.</p>
-<p>Here's how the end result looks like. This screenshot is static but if you build the demo app yourself, you'll see the navigation works as intended.</p>
+<p>Here's how the end result looks like. You can see our app using standard layout across pages and correctly reacting to navigation.</p>
 
 </aside>
       </section>
@@ -483,11 +483,34 @@ proc render*(context: Context): VNode =
 <p>Next, let's look at the layout. This one has its styles stored in a separate value and then applied after Karkas's built-in layouting presets for top panel and horizontal stack.</p>
 <p>Notice how we make a component render other components: we simply pass a VNode and iterate over its children.</p>
 <p>Finally, here's the page code. We now render its content inside the layout component, which ensures every page gets a nice navigation bar. This is done with a simple do notation trick.</p>
-<p>Here's how the end result looks like. This screenshot is static but if you build the demo app yourself, you'll see the navigation works as intended.</p>
+<p>Here's how the end result looks like. You can see our app using standard layout across pages and correctly reacting to navigation.</p>
 
 </aside>
       </section>
       <section data-nimib-slide-number="19" data-auto-animate >
+      <h2>Karkas</h2>
+      <figure>
+<img src="/img/karkas_app.gif" alt="">
+<figcaption></figcaption>
+</figure>
+      <aside class="notes">
+  <p>Thanks to Sauer and Kraut's higher level abstractions and enforced code structure, we can actually have a component system.</p>
+<p>This is where Karkas enters the stage. It's package that helps create components.</p>
+<p>First, Karkas gives you syntax sugar to apply styles to VNodes. While Karax offeres VNode styling by default, its usage requires a lot of redundant typing and type conversion to please the compiler.</p>
+<p>With this sugar, you can create self-contained Svelte-like components.</p>
+<p>Finally, there's sugar for layouting, based on flexbox.</p>
+<p>Here's a sample app generated with Sauer, and layouted with Karkas. You can find the complete code on GitHub.</p>
+<p>First, check out how we create an isolated navigation entry component. Notice that it knows how to render itself based on whether it represents the currently opened page or not.</p>
+<p>Also, you can spot Karkas's arrow proc that converts sequences to VStyles and merges multiple styles together.</p>
+<p>Another interesting proc is k. It simply converts a string into a kstring, saving you typing.</p>
+<p>Next, let's look at the layout. This one has its styles stored in a separate value and then applied after Karkas's built-in layouting presets for top panel and horizontal stack.</p>
+<p>Notice how we make a component render other components: we simply pass a VNode and iterate over its children.</p>
+<p>Finally, here's the page code. We now render its content inside the layout component, which ensures every page gets a nice navigation bar. This is done with a simple do notation trick.</p>
+<p>Here's how the end result looks like. You can see our app using standard layout across pages and correctly reacting to navigation.</p>
+
+</aside>
+      </section>
+      <section data-nimib-slide-number="20" data-auto-animate >
       <h2>The End</h2>
       <ul>
 <li>Live app example: <a href="https://app.cannon-chat.online">app.cannon-chat.online</a></li>

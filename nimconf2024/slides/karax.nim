@@ -50,7 +50,7 @@ Let's first talk a bit about Karax and what foundation it offers us.
 
 First, it implements a Virtual DOM, which is the base mechanic behind React and similar frameworks. The Karax implementation is really straightforward: you just define procs that are evaled in a tight loop to redraw the UI. Karax cares about doing it optimally.
 
-Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim in Karax.
+Second, Karax gives us a great DSL to actually write pages. It's like React's JSX but instead of being a separate HTML-like language, it's just proper Nim.
 
 Finally, Karax offers VNode type that represents a renderable chunk. It's basically a component, almost.
 
