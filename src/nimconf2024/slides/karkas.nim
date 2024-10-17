@@ -2,7 +2,7 @@ import nimib, nimiSlides
 
 
 template slide* =
-  autoAnimateSlides(5):
+  autoAnimateSlides(6):
     nbText "## Karkas" 
 
     showAt(1):
@@ -76,6 +76,9 @@ proc render*(context: Context): VNode =
     h1: text "user"
 ```
 """
+
+    showAt(6):
+      nbImage("/img/karkas_app.gif")
 
     speakerNote """
 Thanks to Sauer and Kraut's higher level abstractions and enforced code structure, we can actually have a component system.
